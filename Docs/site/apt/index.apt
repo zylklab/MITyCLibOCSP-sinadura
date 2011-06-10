@@ -1,0 +1,35 @@
+            ------
+            Introducción
+            ------
+            Ministerio de Industria, Turismo y Comercio
+            ------
+
+¿Qué es MITycLibOCSP?
+
+  MITycLibOCSP es una librería que permite la consulta del estado de los
+certificados mediante el protocolo OCSP (Online Certifate Status Protocol). La 
+librería cumple con el interfaz de consulta de estados de certificados definido 
+en <MITyCLibAPI>.
+
+* Ejemplos de uso
+
+  Mediante los siguientes ejemplos, que se distribuyen con el código fuente de 
+  la librería, se pretente mostrar algunas de las funcionalidades 
+más comunes que un integrador puede necesitar de la librería MITyCLibOCSP:
+
+  * {{{./integrator-guide/basic-ocsp-validation.html}Consulta OCSP básica del estado de un certificado}}
+
+  * {{{./integrator-guide/complete-ocsp-validation.html}Consulta OCSP completa del estado de un certificado}}
+
+  []
+  
+  Los dos ejemplos anteriores tienen varias cosas en común, como la configuración 
+de la conexión (para utilizar un posible proxy), la obtención del certificado
+a consultar y la creación del recuperador de estados de certificados (que incluye
+la obtención de un validador de confianza). Por este motivo, ambos ejemplos extienden de un 
+{{{./integrator-guide/generic-ocsp-validation.html}ejemplo base}} que es necesario
+conocer previamente.
+
+  El objetivo de los ejemplos es que sean fáciles de entender y autocontenidos.
+Por este motivo, aspectos tales como la configuración, la gestión de errores o 
+los mensajes de logs no se han tenido en cuenta.
