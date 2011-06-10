@@ -1,0 +1,86 @@
+            ------
+            Ejemplo para la validación OCSP completa de un certificado
+            ------
+            Ministerio de Industria, Turismo y Comercio
+            ------
+
+Ejemplo para la validación OCSP completa de un certificado
+
+  El objetivo de este ejemplo es mostrar los pasos necesarios para realizar la
+validación OCSP completa de un certificado. Por validación completa se entiende que
+se validará tanto el estado del propio certificado como el de toda la cadena de
+confianza. El programa de ejemplo extiende el {{{./generic-ocsp-validation.html}ejemplo base}}
+implementando aquellos métodos abstractos que lo hacen específico para el tipo de 
+validación a realizar. El código completo del ejemplo se puede ver 
+{{{../xref-test/es/mityc/javasign/certificate/ocsp/examples/CompleteOCSPValidation.html}aquí}}.
+También se puede ver el Javadoc asociado al ejemplo 
+{{{../testapidocs/es/mityc/javasign/certificate/ocsp/examples/CompleteOCSPValidation.html}aquí}}.
+
+  La implementación de los métodos abstractos <getCertificateToCheck()> y 
+<getOCSPServer()> de la clase
+{{{../testapidocs/es/mityc/javasign/certificate/ocsp/examples/BaseOCSPValidation.html}BaseOCSPValidation}}
+de la que hereda este ejemplo es la siguiente:
+  
++---+
+@Override
+protected String getCertificateToCheck() {
+    return CERTIFICATE_TO_CHECK;
+}
+
+@Override
+protected String getOCSPResponder() {
+    return OCSP_RESPONDER;
+}
++---+
+
+  Como se puede ver, tanto el certificado a validar como el <OCSP responder> contra el
+que hacer la validación aparecen como constantes, por simplificar el programa. Por tanto
+habrá que asignarle el valor adecuado a las constantes para validar un certificado 
+contra un <OCSP Responder> determinado.
+
+  En cuanto a la implementación del método abstracto 
+<doOCSPValidation(X509Certificate certificate, ICertStatusRecoverer certStatusRecoverer)> de la clase
+{{{../testapidocs/es/mityc/javasign/certificate/ocsp/examples/BaseOCSPValidation.html}BaseOCSPValidation}}
+habría que realizar los siguientes pasos:
+
+  [[1]] Validación del certificado y obtención del resultado
+  
++---+
+List<ICertStatus> resultOCSPValidation = null;
+try {
+    resultOCSPValidation = certStatusRecoverer.getCertChainStatus(certificate);
+} catch (CertStatusException e) {
+   (... Error en la consulta OCSP ...)
+}
++---+
+
+  [[3]] El resulto obtenido es una lista de estados de certificados como objetos
+<ICertStatus> (interfaz que forma parte de la librería MITyCLibAPI). En la lista
+devuelta, el primer elemento se corresponde con el estado del propio certificado,
+mientras que el resto se corresponden con los estados de los certificados de la
+cadena de confianza. Para analizar el resultado se podría realizar lo siguiente:
+  
++---+
+if (resultOCSPValidation != null && resultOCSPValidation.size() >= 1) {
+    Iterator<ICertStatus> iterator = resultOCSPValidation.iterator();
+    int i = 0;
+    while (iterator.hasNext()) {
+        ICertStatus certStatus = iterator.next();
+        switch (certStatus.getStatus()) {
+        case valid:
+            (... Certificado valido. Si i es 0 se trata del certificado original ...");
+            break;
+        case revoked:
+            (... Certificado revocado en la fecha <certStatus.getRevokedInfo().getRevokedDate()>. Si i es 0 se trata del certificado original ...)
+            break;
+        default:
+            (... Estado del certificado desconocido. Si i es 0 se trata del certificado original ...)
+            break;
+        }
+        i++;
+    }
+} else {
+    (... Hubo un error al contactar con el servidor OCSP ...)
+}
++---+
+  

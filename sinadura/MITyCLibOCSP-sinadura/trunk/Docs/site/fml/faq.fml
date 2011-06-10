@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs xmlns="http://maven.apache.org/FML/1.0.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd"
+  title="Preguntas frecuentes"
+  toplink="false">
+
+  <part id="general">
+    <title>General</title>
+
+    <faq id="que-es-MITyCLibOCSP">
+      <question>
+        ¿Qué es MITyCLibOCSP?
+      </question>
+      <answer>
+        <p>MITyCLibOCSP es una librería que forma parte del proyecto de Componentes 
+           que distribuye el Ministerio de Industria, Turismo y Comercio. Dicha 
+           librería proporciona la funcionalidad necesaria para realizar consultas
+           OCSP (Online Certificate Status Protocol).</p>
+      </answer>
+    </faq>
+    <faq id="quien-debe-usarla">
+      <question>
+        ¿Quién debe usar MITyCLibOCSP?
+      </question>
+      <answer>
+        <p>Aquellos integradores que necesiten realizar comprobaciones del estado de algún certificados mediante OCSP.</p>
+      </answer>
+    </faq>
+    <faq id="licencia-de-distribucion">
+      <question>
+        ¿Bajo qué licencia se distribuye?
+      </question>
+      <answer>
+        <p>Bajo licencia LGPL.</p>
+      </answer>
+    </faq>
+    <faq id="en-caso-de-error">
+      <question>
+        En caso de encontrar un error, ¿a quién debo dirigirme?
+      </question>
+      <answer>
+        <p>Al Centro de Tecnologías del Plan Avanza, mediante correo electrónico en la dirección:</p>
+        <p><img alt="Email Centro de Tecnología del Plan Avanza" src="images/imagenEmail.png"/></p>
+      </answer>
+    </faq>
+  </part>
+
+  <part id="instalacion">
+
+    <title>Instalación</title>
+
+    <faq id="requisitos">
+      <question>
+        Requisitos
+      </question>
+      <answer>
+        <p>Máquina virtual Java 1.5 o superior (disponible descarga en <a href="http://www.java.com">www.java.com</a>).</p>
+      </answer>
+    </faq>
+    <faq id="como-se-instala">
+      <question>
+        ¿Cómo se instala?
+      </question>
+      <answer>
+        <p>Incluyendo el Jar de la propia librería y todas sus <a href="dependencies.html">
+           dependencias</a> en el <i>Classpath</i> de la aplicación que va a usar esta librería.</p>
+      </answer>
+    </faq>
+
+  </part>
+
+</faqs>

@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>es.mityc.jumbo.adsi</groupId>
+      <artifactId>components</artifactId>
+      <version>1.0.4</version>
+  </parent>
+  
+  
+  <repositories>
+		<repository>
+			<id>itextpdf.com</id>
+			<name>Maven Repository for iText</name>
+			<url>http://maven.itextpdf.com/</url>
+		</repository>
+		<repository>
+			<id>sinadura-group</id>
+			<name>sinadura-group</name>
+			<url>http://nexus-maven.zylk.net:8081/nexus/content/groups/sinadura-group</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+  
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>es.mityc.jumbo.adsi</groupId>
+  <artifactId>MITyCLibOCSP-sinadura</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0.4</version>
+  <name>MITyCLibOCSP</name>
+  <dependencies>
+    <dependency>
+      <groupId>es.mityc.jumbo.adsi</groupId>
+      <artifactId>MITyCLibAPI</artifactId>
+      <version>1.0.4</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15</artifactId>
+      <version>1.43</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <!-- 
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.0.1</version>
+      <scope>compile</scope>
+    </dependency>
+     -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.3.1</version>
+      <type>jar</type>
+      <scope>test</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.14</version>
+      <type>jar</type>
+      <scope>test</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>es.mityc.jumbo.adsi</groupId>
+      <artifactId>MITyCLibTrust</artifactId>
+      <version>1.0.4</version>
+      <scope>test</scope>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+  <build>
+  </build>
+  <licenses>
+    <license>
+      <name>Creative Commons</name>
+      <url>http://creativecommons.org/licenses/by/3.0/legalcode</url>
+      <distribution>repo</distribution>
+      <comments>Documentación distribuida bajo licencia Creative Commons 3.0 de reconocimiento.</comments>
+    </license>
+    <license>
+      <name>LGPL</name>
+      <url>http://www.gnu.org/licenses/lgpl-3.0-standalone.html</url>
+      <distribution>repo</distribution>
+      <comments>Software distribuido bajo licencia LGPL.</comments>
+    </license>
+  </licenses>
+  <organization>
+    <name>Ministerio de Industria, Turismo y Comercio</name>
+    <url>http://www.mityc.es</url>
+  </organization>
+</project>

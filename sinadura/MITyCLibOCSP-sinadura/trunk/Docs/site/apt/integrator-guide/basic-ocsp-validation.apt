@@ -1,0 +1,76 @@
+            ------
+            Ejemplo para la validación OCSP básica de un certificado
+            ------
+            Ministerio de Industria, Turismo y Comercio
+            ------
+
+Ejemplo para la validación OCSP básica de un certificado
+
+  El objetivo de este ejemplo es mostrar los pasos necesarios para realizar la
+validación OCSP básica de un certificado. Por validación básica se entiende que
+sólo se validará el estado del propio certificado y no de toda la cadena de
+confianza. El programa de ejemplo extiende el {{{./generic-ocsp-validation.html}ejemplo base}}
+implementando aquellos métodos abstractos que lo hacen específico para el tipo de 
+validación a realizar. El código completo del ejemplo se puede ver 
+{{{../xref-test/es/mityc/javasign/certificate/ocsp/examples/BasicOCSPValidation.html}aquí}}.
+También se puede ver el Javadoc asociado al ejemplo 
+{{{../testapidocs/es/mityc/javasign/certificate/ocsp/examples/BasicOCSPValidation.html}aquí}}.
+
+  La implementación de los métodos abstractos <getCertificateToCheck()> y 
+<getOCSPServer()> de la clase
+{{{../testapidocs/es/mityc/javasign/certificate/ocsp/examples/BaseOCSPValidation.html}BaseOCSPValidation}}
+de la que hereda este ejemplo es la siguiente:
+  
++---+
+@Override
+protected String getCertificateToCheck() {
+    return CERTIFICATE_TO_CHECK;
+}
+
+@Override
+protected String getOCSPResponder() {
+    return OCSP_RESPONDER;
+}
++---+
+
+  Como se puede ver, tanto el certificado a validar como el <OCSP responder> contra el
+que hacer la validación aparecen como constantes, por simplificar el programa. Por tanto
+habrá que asignarle el valor adecuado a las constantes para validar un certificado 
+contra un <OCSP Responder> determinado.
+
+  En cuanto a la implementación del método abstracto 
+<doOCSPValidation(X509Certificate certificate, ICertStatusRecoverer certStatusRecoverer)> de la clase
+{{{../testapidocs/es/mityc/javasign/certificate/ocsp/examples/BaseOCSPValidation.html}BaseOCSPValidation}}
+habría que realizar los siguientes pasos:
+
+  [[1]] Validación del certificado y obtención del resultado
+  
++---+
+// Estructura que almacenará la respuesta del servidor OCSP
+ICertStatus certStatus = null;
+try {
+    // Se realiza la consulta
+    certStatus = certStatusRecoverer.getCertStatus(certificate);
+} catch (CertStatusException e) {
+   (... Error en la consulta OCSP ...)
+}
++---+
+
+  [[2]] Una vez obtenido el resultado se podría analizar de la siguiente forma:
+  
++---+
+if (certStatus != null) {
+    switch (certStatus.getStatus()) {
+    case valid:
+        (... Certificado válido ...)
+        break;
+    case revoked:
+        (... Certificado revocado en la fecha <certStatus.getRevokedInfo().getRevokedDate()> ...)
+        break;
+    default:
+        (... Estado del certificado desconocido ...)
+    }
+} else {
+    (... Hubo un error al contactar con el servidor OCSP ...)
+}
++---+

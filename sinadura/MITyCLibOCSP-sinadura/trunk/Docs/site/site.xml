@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MITycLibOCSP">
+
+  <bannerLeft>
+    <name>MITycLibOCSP</name>
+    <src>images/LogoMITyCLibOCSP.png</src>
+  </bannerLeft>
+
+  <bannerRight>
+    <name>Avanza2</name>
+    <src>images/banner_avanza2.gif</src>
+  </bannerRight>
+
+  <publishDate position="none"/>
+
+  <version position="right"/>
+  
+  <body>
+    <links>
+      <item name="MITyCLibAPI" href="../MITyCLibAPI/index.html" />
+      <item name="MITyCLibTrust" href="../MITyCLibTrust/index.html" />
+    </links>
+
+    <breadcrumbs>
+      <item name="MITyCLibOCSP" href="./index.html"/>
+    </breadcrumbs>
+
+    <menu name="MITyCLibOCSP">
+      <item name="Introducción" href="index.html"/>
+      <item name="FAQ" href="faq.html"/>
+    </menu>
+
+    <menu name="Ejemplos de uso">
+      <item name="Validación OCSP básica" href="integrator-guide/basic-ocsp-validation.html"/>
+      <item name="Validación OCSP completa" href="integrator-guide/complete-ocsp-validation.html"/>
+    </menu>
+
+    <menu ref="reports"/>
+  </body>
+</project>
