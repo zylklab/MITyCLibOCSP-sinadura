@@ -16,7 +16,7 @@
 		<repository>
 			<id>sinadura-group</id>
 			<name>sinadura-group</name>
-			<url>http://nexus-maven.zylk.net:8081/nexus/content/groups/sinadura-group</url>
+			<url>https://services.zylk.net/nexus/content/groups/sinadura-group</url>
 			<layout>default</layout>
 			<releases>
 				<enabled>true</enabled>
