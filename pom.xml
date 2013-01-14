@@ -41,9 +41,9 @@
 			<url>http://maven.itextpdf.com/</url>
 		</repository>
 		<repository>
-			<id>sinadura-group</id>
-			<name>sinadura-group</name>
-			<url>https://services.zylk.net/nexus/content/groups/sinadura-group</url>
+			<id>sinadura-dependencies</id>
+			<name>sinadura-dependencies</name>
+			<url>https://services.zylk.net/nexus/content/groups/sinadura-micyt</url>
 			<layout>default</layout>
 			<releases>
 				<enabled>true</enabled>
@@ -108,13 +108,15 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
+	
 	<distributionManagement>
 		<repository>
 			<id>maven-nexus-zylk</id>
-			<name>Maven Nexus at Zylk</name>
-			<url>https://services.zylk.net/nexus/content/repositories/sinadura-micyt</url>
+			<name>sinadura-releases</name>
+			<url>https://services.zylk.net/nexus/content/repositories/sinadura-releases</url>
 		</repository>
 	</distributionManagement>
+	
 	<licenses>
 		<license>
 			<name>Creative Commons</name>
