@@ -73,3 +73,4 @@ readme.txt
 ######################
 .idea
 *.iml
+/dist/
