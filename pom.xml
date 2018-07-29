@@ -6,9 +6,11 @@
 	</parent>
 	
 	<scm>
-   		<connection>scm:svn:https://services.zylk.net/sinadura-repo/sinadura/MITyCLibOCSP-sinadura/trunk</connection>
-   		<url>https://services.zylk.net/sinadura-repo/sinadura/MITyCLibOCSP-sinadura/trunk</url>
-	</scm>
+    	<connection>scm:git:https://github.com/zylklab/MITyCLibOCSP-sinadura.git</connection>
+        <developerConnection>scm:git:https://github.com/zylklab/MITyCLibOCSP-sinadura.git</developerConnection>
+        <url>https://github.com/zylklab/MITyCLibOCSP-sinadura</url>
+        <tag>develop</tag>
+    </scm>
 	
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>MITyCLibOCSP-sinadura</artifactId>
@@ -33,7 +35,7 @@
 			<plugin>
    				<groupId>org.apache.maven.plugins</groupId>
    				<artifactId>maven-release-plugin</artifactId>
-   				<version>2.4</version>
+   				<version>2.5.3</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
