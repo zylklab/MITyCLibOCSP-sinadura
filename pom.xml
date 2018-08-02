@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>MITyCLibOCSP-sinadura</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.7-SNAPSHOT</version>
+	<version>1.0.8-SNAPSHOT</version>
 	<name>MITyCLibOCSP</name>
 
 	<build>
@@ -85,8 +85,7 @@
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcprov-jdk15</artifactId>
-			<version>1.43</version>
-			<scope>compile</scope>
+			<version>1.46</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
