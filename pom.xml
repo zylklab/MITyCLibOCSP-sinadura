@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>MITyCLibOCSP-sinadura</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.9-SNAPSHOT</version>
+	<version>1.0.9</version>
 	<name>MITyCLibOCSP</name>
 
 	<build>
