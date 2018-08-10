@@ -85,7 +85,8 @@
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcprov-jdk15</artifactId>
-			<version>1.46</version>
+			<version>1.43</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
