@@ -3,14 +3,14 @@
     	<connection>scm:git:https://github.com/zylklab/MITyCLibOCSP-sinadura.git</connection>
         <developerConnection>scm:git:https://github.com/zylklab/MITyCLibOCSP-sinadura.git</developerConnection>
         <url>https://github.com/zylklab/MITyCLibOCSP-sinadura</url>
-        <tag>MITyCLibOCSP-sinadura-1.0.9</tag>
+        <tag>develop</tag>
     </scm>
 	
 	<groupId>es.mityc.jumbo.adsi</groupId>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>MITyCLibOCSP-sinadura</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.9</version>
+	<version>1.0.10-SNAPSHOT</version>
 	<name>MITyCLibOCSP</name>
 
 	<build>
